@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko market Barmodss</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Kontainer utama */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            width: 100%;
+            margin: 20px auto;
+            padding: 0 10px;
+        }
+
+        /* Produk */
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+            text-align: center;
+        }
+
+        .product:hover {
+            transform: scale(1.02);
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            max-height: 150px;
+            object-fit: cover;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header><i class="fas fa-shopping-cart"></i> Toko market Barmodss</header>
+
+    <div class="container">
+        <div class="product">
+            <img src="https://files.catbox.moe/4sq1mv.jpg" alt="Produk 1">
+            <h2>Petrodactyl Panel</h2>
+            <p class="price"><i class="fas fa-tags"></i> Rp 1.000 - 11.000</p>
+            <button onclick="Orderbang('/buy/panel')"><i class="fab fa-whatsapp"></i> Beli</button>
+        </div>
+        <div class="product">
+            <img src="https://files.catbox.moe/4sq1mv.jpg" alt="Produk 2">
+            <h2>Admin Panel</h2>
+            <p class="price"><i class="fas fa-tags"></i> Rp PROMO - 5.000</p>
+            <button onclick="Orderbang('/buy/adp')"><i class="fab fa-whatsapp"></i> Beli</button>
+        </div>
+        <div class="product">
+            <img src="https://files.catbox.moe/ifnat5.jpg" alt="Produk 3">
+            <h2>Script Bot</h2>
+            <p class="price"><i class="fas fa-tags"></i> Rp 25.000 - 50.000</p>
+            <button onclick="Orderbang('/buy/script')"><i class="fab fa-whatsapp"></i> Beli</button>
+        </div>
+        <div class="product">
+            <img src="https://files.catbox.moe/qrb674.jpg" alt="Produk 4">
+            <h2>Install VPS > Panel</h2>
+            <p class="price"><i class="fas fa-tags"></i> Rp 5.000</p>
+            <button onclick="beliProduk('Install VPS Ke Panel')"><i class="fab fa-whatsapp"></i> Beli</button>
+        </div>
+        <div class="product">
+            <img src="https://files.catbox.moe/qrb674.jpg" alt="Produk 4">
+            <h2>VPS RAM 1GB CORE 1</h2>
+            <p class="price"><i class="fas fa-tags"></i> Rp 10.000</p>
+            <button onclick="beliProduk('Vps Ram 1GB Core 1')"><i class="fab fa-whatsapp"></i> Beli</button>
+        </div>
+        <div class="product">
+            <img src="https://files.catbox.moe/qrb674.jpg" alt="Produk 4">
+            <h2>VPS RAM 2GB CORE 1</h2>
+            <p class="price"><i class="fas fa-tags"></i> Rp 15.000</p>
+            <button onclick="beliProduk('Vps Ram 2GB Core 1')"><i class="fab fa-whatsapp"></i> Beli</button>
+        </div>
+        <div class="product">
+            <img src="https://files.catbox.moe/qrb674.jpg" alt="Produk 4">
+            <h2>VPS RAM 2GB CORE 2</h2>
+            <p class="price"><i class="fas fa-tags"></i> Rp 20.000</p>
+            <button onclick="beliProduk('Vps Ram 2GB Core 2')"><i class="fab fa-whatsapp"></i> Beli</button>
+        </div>
+        <div class="product">
+            <img src="https://files.catbox.moe/qrb674.jpg" alt="Produk 4">
+            <h2>VPS RAM 4GB CORE 2</h2>
+            <p class="price"><i class="fas fa-tags"></i> Rp 30.000</p>
+            <button onclick="beliProduk('Vps Ram 4GB Core 2')"><i class="fab fa-whatsapp"></i> Beli</button>
+        </div>
+        <div class="product">
+            <img src="https://files.catbox.moe/qrb674.jpg" alt="Produk 4">
+            <h2>VPS RAM 8GB CORE 4</h2>
+            <p class="price"><i class="fas fa-tags"></i> Rp 40.000</p>
+            <button onclick="beliProduk('Vps Ram 8GB Core 4')"><i class="fab fa-whatsapp"></i> Beli</button>
+        </div>
+        <div class="product">
+            <img src="https://files.catbox.moe/qrb674.jpg" alt="Produk 4">
+            <h2>VPS RAM 16GB CORE 4</h2>
+            <p class="price"><i class="fas fa-tags"></i> Rp 70.000</p>
+            <button onclick="beliProduk('Vps Ram 16GB Core 4')"><i class="fab fa-whatsapp"></i> Beli</button>
+        </div>
+    </div>
+
+    <script>
+        function beliProduk(namaProduk) {
+            window.location.href = `https://wa.me/6282396674917?text=Halo%20saya%20mau%20beli%20${encodeURIComponent(namaProduk)}`;
+        }
+        function Orderbang(url) {
+            window.location.href = url;
+        }        
+    </script>
+
+</body>
+</html>
